@@ -5,8 +5,8 @@
 1. Create Python virtualvenv
 2. Just in case run `pip install -U pip setuptools wheel`
 3. Run `pip install -r requirements.txt`
-4. Copy .env.template to .env and create new database for your shop.
-   Optionally you can modify Django settings directly to the settings file.
+4. Optionally copy .env.template to .env and create new database for your shop.
+   You can also modify Django settings directly to the settings file.
 5. Create tables in the database by running `python manage.py migrate`
 6. Initialize installation by running `python manage.py shuup_init`
 7. Create superuser to access admin `python manage.py createsuperuser`

@@ -17,16 +17,15 @@ DEBUG = env('DEBUG')
 
 env.read_env(os.path.join(BASE_DIR, 'shuup-project-template', '.env'))
 
-SECRET_KEY = env('SECRET_KEY')
+SECRET_KEY = env('SECRET_KEY', default='xxx')
 
-DATABASES = {'default': dj_database_url.config()}
+DATABASES = {'default': dj_database_url.config(default='sqlite:///db.sqlite3')}
 
 MEDIA_URL = env('MEDIA_URL', default='/media/')
 STATIC_URL = env('STATIC_URL', default='/static/')
 
 MEDIA_ROOT = root(env('MEDIA_LOCATION', default=os.path.join(BASE_DIR, 'var', 'media')))
 STATIC_ROOT = root(env('STATIC_LOCATION', default=os.path.join(BASE_DIR, 'var', 'static')))
-
 
 SHUUP_HOME_CURRENCY = env('SHOP_CURRENCY', default='USD')
 
